@@ -28,3 +28,4 @@ class Crop(db.Model):
     life_cycle = db.Column(SQLAlchemyEnum(LifeCycle), nullable=False)
 
     favourite_crops = db.relationship("FavouriteCrop", back_populates="crop", lazy=True, cascade="all, delete")
+    planting_calendars = db.relationship("PlantingCalendar", back_populates="crop", lazy=True, cascade="all, delete")
