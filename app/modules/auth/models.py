@@ -18,6 +18,7 @@ class User(db.Model, UserMixin):
     )
 
     profile = db.relationship("UserProfile", backref="user", uselist=False)
+    favourite_crops = db.relationship("FavouriteCrop", back_populates="user", lazy=True, cascade="all, delete")
     active = db.Column(db.Boolean, default=True, nullable=False)
 
     def __init__(self, **kwargs):
