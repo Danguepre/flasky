@@ -29,3 +29,4 @@ class Crop(db.Model):
 
     favourite_crops = db.relationship("FavouriteCrop", back_populates="crop", lazy=True, cascade="all, delete")
     planting_calendars = db.relationship("PlantingCalendar", back_populates="crop", lazy=True, cascade="all, delete")
+    env_requirements = db.relationship("EnvRequirement", back_populates="crop", uselist=False)

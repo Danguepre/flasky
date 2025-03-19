@@ -10,7 +10,7 @@ class PlantingCalendar(db.Model):
     transplant_date_end = db.Column(db.Date, nullable=True)
     estimated_harvest_start_date = db.Column(db.Date, nullable=True)
     estimated_harvest_end_date = db.Column(db.Date, nullable=True)
-    
+
     # Relación con Crop
     id_crop = db.Column(db.Integer, db.ForeignKey("crop.id"), nullable=False)
     crop = db.relationship("Crop", back_populates="planting_calendars")
